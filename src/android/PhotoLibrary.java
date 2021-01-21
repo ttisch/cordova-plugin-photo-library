@@ -206,10 +206,11 @@ public class PhotoLibrary extends CordovaPlugin {
                 return;
               }
 
-              service.saveImage(getContext(), cordova, url, album, new PhotoLibraryService.JSONObjectRunnable() {
+              service.saveImage(getContext(), cordova, url, album, new Runnable() {
                 @Override
                 public void run(JSONObject result) {
-                  callbackContext.success(result);
+                  callbackContext.success();
+                  return;
                 }
               });
 
